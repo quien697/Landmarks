@@ -10,14 +10,14 @@ import SwiftUI
 struct FeatureCard: View {
   var landmark: Landmark
   
-    var body: some View {
-      landmark.featureImage?
-        .resizable()
-        .aspectRatio(3 / 2, contentMode: .fit)
-        .overlay {
-          TextOverlay(landmark: landmark)
-        }
-    }
+  var body: some View {
+    landmark.featureImage?
+      .resizable()
+      .aspectRatio(3 / 2, contentMode: .fit)
+      .overlay {
+        TextOverlay(landmark: landmark)
+      }
+  }
 }
 
 struct TextOverlay: View {
@@ -47,7 +47,7 @@ struct TextOverlay: View {
 }
 
 struct FeatureCard_Previews: PreviewProvider {
-    static var previews: some View {
-      FeatureCard(landmark: ModelData().landmarks[0])
-    }
+  static var previews: some View {
+    FeatureCard(landmark: ModelData().landmarks[0])
+  }
 }

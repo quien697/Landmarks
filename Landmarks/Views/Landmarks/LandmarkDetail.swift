@@ -20,15 +20,18 @@ struct LandmarkDetail: View {
       MapView(coordinate: landmark.locationCoordinate)
         .ignoresSafeArea(edges: .top)
         .frame(height: 300)
+      
       CircleImage(image: landmark.image)
         .offset(y: -130)
         .padding(.bottom, -130)
+      
       VStack(alignment: .leading) {
         HStack {
           Text(landmark.name)
             .font(.title)
           FavoriteButton(isSet: $modalData.landmarks[landmarkIndex].isFavorite)
         }
+        
         HStack {
           Text(landmark.park)
           Spacer()
@@ -36,7 +39,9 @@ struct LandmarkDetail: View {
         }
         .font(.subheadline)
         .foregroundColor(.secondary)
+        
         Divider()
+        
         Text("About \(landmark.name)")
           .font(.title2)
         Text(landmark.description)
